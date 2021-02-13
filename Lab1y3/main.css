@@ -1,0 +1,25 @@
+@import 'https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap';
+
+body {
+    margin: 0 auto;
+    max-width: 50em;
+    font-family: "Segoe UI", "Tahoma", "Geneva", "Verdana", sans-serif;
+    line-height: 1.5;
+    padding: 4em 1em;
+    color: cadetblue;
+}
+
+h1 {
+    color: #5a56b4;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5 em;
+}
+
+h4 {
+    margin-top: 1em;
+    padding-top: 1em;
+}
+
+strong {
+    color: #333;
+}
