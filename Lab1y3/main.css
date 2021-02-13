@@ -13,7 +13,7 @@ body {
     width: 100%;
     position: center;
     font-family: 'Nunito Sans', sans-serif;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 1.5;
     color: rgba(43,51,73,1);;
 }
@@ -118,8 +118,7 @@ a {
 }
 
 a:hover {
-    background: rgb(228, 253, 171);
-    color: cadetblue;
+    color: wheat;
 }
 
 hr {
