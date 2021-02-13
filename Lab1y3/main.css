@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Nunito+Sans:wght@300;400&family=Parisienne&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Nunito+Sans:wght@300;400&family=Barlow+Condensed:wght@400;600&family=Parisienne&display=swap';
 
 html {
     height: 100%;
@@ -15,7 +15,7 @@ body {
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 400;
     line-height: 1.5;
-    color: rgba(43,51,73,1);
+    color: rgba(43,51,73,1);;
 }
 
 header {
@@ -36,26 +36,40 @@ h1 {
 }
 
 h2 {
-    padding: 10px;
+    text-align: center;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 0.5em;
     color: #2b3349;
-    font-size: 3em;
-    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5em;
+    font-family: 'Barlow Condensed', sans-serif;
     margin: 0px;
 }
 
 h3 {
-    color: #534faa;
+    margin: 0px;
+    padding-top: 2em;
+    padding-left: 30px;
+    color: #2b3349;
     font-weight: 600;
     line-height: 1.5;
+    font-family: 'Barlow Condensed', sans-serif;
 }
 
 h4 {
+    margin: 0px;
+    margin-left: 3em;
+    margin-right: 3em;
     color: #736fc5;
-    margin-top: 1em;
     padding-top: 1em;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 1 em;
+}
+
+div {
+    padding-left: 45px;
+    padding-right: 45px;
 }
 
 strong {
@@ -68,7 +82,10 @@ ol, ul, li {
 }
 
 table {
+    background: white;
     padding-left: 50em;
+    margin-top: 20px;
+    margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -80,6 +97,16 @@ table, th, td {
     text-align: center;
 }
 
+th {
+    background: #2b3349;
+    color: white;
+}
+
+.respuesta {
+    padding-left: 25px;
+    padding-top: 10px;
+}
+
 #nombreMatricula {
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 300;
@@ -87,7 +114,8 @@ table, th, td {
 }
 
 .seccion {
-    padding: 10 em;
+    padding-top: 10px;
+    padding-bottom: 55px;
 }
 
 a {
@@ -104,14 +132,22 @@ hr {
 }
 
 #html {
-    background: white;
+    background: #eae5df;
     padding: 0 vw;
     margin: 0px;
     border: 0px;
 }
 
+#html h4 {
+    color: rgba(43,51,73,1);
+}
+
+#html h3 {
+    font-size: 1.5em;
+}
+
 #css {
-    background: #eae5df;
+    background: white;
 }
 
 #css h4 {
@@ -127,7 +163,7 @@ hr {
 #referencias h3 {
     text-align: left;
     font-size: 4em;
-    font-family: 'Parisienne', cursive;
+    font-family: 'Barlow Condensed', sans-serif;
     font-weight: 100;
     color: #d7b58c;
     margin: 10px;
