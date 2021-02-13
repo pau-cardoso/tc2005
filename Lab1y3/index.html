@@ -13,92 +13,105 @@
     <header id="header">        
         <h1> Lab 1, 3 </h1>
     </header>
-    <h4> ¿Cuál es la diferencia entre Internet y la World Wide Web?</h4>
-    <p>El internet es una red que tiene muchas computadoras conectadas entre sí. Mientras que el World Wide Web es un sistema de información que almacena páginas dentro de esta red.</p>
-    <h4>¿Cuáles son las partes de un URL?</h4>
-    <p>Una url cuenta con:</p>
-    <ul>
-        <li>Protocolo</li>
-        <li>Subdominio</li>
-        <li>Dominio</li>
-    </ul>
-    <h4>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</h4>
-    <p></p>
-    <ul>
-        <li><strong>GET -</strong> <span> Recupera un archivo de algún servidor web para leer. </span> </li>
-        <li><strong>HEAD -</strong> <span> Igual al GET pero este solicita los metadatos de un archivo, en cambio de todo el elemento. </span> </li>
-        <li><strong>POST -</strong> <span> Envía datos e información a un recurso web del servidor. </span> </li>
-        <li><strong>PUT -</strong> <span> Crea o carga un nuevo recurso al servidor. Si ya existe, reemplaza el que existe con el recurso que se carga. </span> </li>
-        <li><strong>PATCH -</strong> <span> Aplica modificaciones parciales a un recurso específico. </span> </li>
-        <li><strong>DELETE -</strong> <span> Solicita al servidor web que se borre algún recurso. </span> </li>
-    </ul>
-    <h4>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</h4>
-    <p>POST, porque es el que se encarga de enviar datos a un recurso web.</p>
-    <h4>¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</h4>
-    <p>GET, porque se encarga de recuperar algún archivo de algún servidor para leerlo en el navegador. </p>
-    <h4>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</h4>
-    <p>Que fue exitoso, todo está bien y no hay ningún problema</p>
-    <h4>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</h4>
-    <p>Sí, porque este error sucede cuando se accede a algo prohibido, hay un enlace roto, defectuoso o que ya no existe y que, por lo tanto, ya no se puede navegar en él.</p>
-    <h4>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</h4>
-    <p>Sí, esto sucede cuando algo sale mal en el servidor del sitio web. Por lo que el desarrollador tendrá que arreglar el servidor del sitio web.</p>
-    <h4>¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.</h4>
-    <p>Que ya no se recomienda su uso, sigue soportado pero no recomendado. Ejemplo: center</p>
-    <h4>¿Cuáles son las diferencias principales entre HTML 4 y HTML5?</h4>
-    <p>Algunas diferencias entre HTML 4 y HTML 5 son:</p>
-    <ul>
-        <li>Sintaxis simplificada en HTML5</li>
-        <li>Elementos como header y footer</li>
-        <li>Elementos como section y article</li>
-        <li>Elementos como menu y figure</li>
-        <li>Elementos como audio y video</li>
-        <li>Nuevo nivel de las formas</li>
-        <li>Desaparecen frame, center y big</li>
-    </ul>
-    <h4>¿Qué componentes de estructura y estilo tiene una tabla?</h4>
-    <p>El table, la creación de una tabla. El tr, o table row, que crea una hilera en la tabla. El td, o table data, que agrega los datos de la tabla. Y el th, o table header que será el encabezado de la tabla.</p>
-    <table>
-        <tr>
-            <th>Encabezado 1</th>
-            <th>Encabezado 2</th>
-        </tr>
-        <tr>
-            <td>Dato 1</td>
-            <td>Dato 2</td>
-        </tr>
-        <tr>
-            <td>Dato 3</td>
-            <td>Dato 4</td>
-        </tr>
-    </table>
-    <h4>¿Cuáles son los principales controles de una forma HTML5?</h4>
-    <p>form, fieldset, legend, label, input, burron, select, datalist, optgroup, option, textarea, keygen, output, progress, y meter.</p>
-    <h4>¿Qué tanto soporte HTML5 tiene el navegador que utilizas? Puedes utilizar la siguiente página para descubrirlo: http://html5test.com/ (Al responder la pregunta recuerda poner el navegador que utilizas)</h4>
-    <p>En mi caso, al usar un navegador Chrome, mi navegador soporta 476 de 555 puntos.</p>
-    <h3>Sobre el ciclo de vida y desarrollo de los sistemas de información:</h3>
-    <h4>¿Cuál es el ciclo de vida de los sistemas de información?</h4>
-    <p>El ciclo de vida de un sistema de información es</p>
-    <ol>
-        <li>Nacimiento</li>
-        <li>Desarrollo</li>
-        <li>Operación</li>
-        <li>Mantenimiento</li>
-        <li>Muerte</li>
-    </ol>
-    <h4>¿Cuál es el ciclo de desarrollo de sistemas de información?</h4>
-    <p>El ciclo de desarrollo de un sistema de información es</p>
-    <ol>
-        <li>Planificación</li>
-        <li>Análisis de requerimientos</li>
-        <li>Diseño</li>
-        <li>Desarrollo</li>
-        <li>Integración y pruebas</li>
-        <li>Implementación</li>
-        <li>Mantenimiento</li>
-    </ol>
+    <div id="html" class="seccion">
+        <h2>HTML</h2>
+        <h4> ¿Cuál es la diferencia entre Internet y la World Wide Web?</h4>
+        <p>El internet es una red que tiene muchas computadoras conectadas entre sí. Mientras que el World Wide Web es un sistema de información que almacena páginas dentro de esta red.</p>
+        <h4>¿Cuáles son las partes de un URL?</h4>
+        <p>Una url cuenta con:</p>
+        <ul>
+            <li>Protocolo</li>
+            <li>Subdominio</li>
+            <li>Dominio</li>
+        </ul>
+        <h4>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</h4>
+        <p></p>
+        <ul>
+            <li><strong>GET -</strong> <span> Recupera un archivo de algún servidor web para leer. </span> </li>
+            <li><strong>HEAD -</strong> <span> Igual al GET pero este solicita los metadatos de un archivo, en cambio de todo el elemento. </span> </li>
+            <li><strong>POST -</strong> <span> Envía datos e información a un recurso web del servidor. </span> </li>
+            <li><strong>PUT -</strong> <span> Crea o carga un nuevo recurso al servidor. Si ya existe, reemplaza el que existe con el recurso que se carga. </span> </li>
+            <li><strong>PATCH -</strong> <span> Aplica modificaciones parciales a un recurso específico. </span> </li>
+            <li><strong>DELETE -</strong> <span> Solicita al servidor web que se borre algún recurso. </span> </li>
+        </ul>
+        <h4>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</h4>
+        <p>POST, porque es el que se encarga de enviar datos a un recurso web.</p>
+        <h4>¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</h4>
+        <p>GET, porque se encarga de recuperar algún archivo de algún servidor para leerlo en el navegador. </p>
+        <h4>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</h4>
+        <p>Que fue exitoso, todo está bien y no hay ningún problema</p>
+        <h4>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</h4>
+        <p>Sí, porque este error sucede cuando se accede a algo prohibido, hay un enlace roto, defectuoso o que ya no existe y que, por lo tanto, ya no se puede navegar en él.</p>
+        <h4>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</h4>
+        <p>Sí, esto sucede cuando algo sale mal en el servidor del sitio web. Por lo que el desarrollador tendrá que arreglar el servidor del sitio web.</p>
+        <h4>¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.</h4>
+        <p>Que ya no se recomienda su uso, sigue soportado pero no recomendado. Ejemplo: center</p>
+        <h4>¿Cuáles son las diferencias principales entre HTML 4 y HTML5?</h4>
+        <p>Algunas diferencias entre HTML 4 y HTML 5 son:</p>
+        <ul>
+            <li>Sintaxis simplificada en HTML5</li>
+            <li>Elementos como header y footer</li>
+            <li>Elementos como section y article</li>
+            <li>Elementos como menu y figure</li>
+            <li>Elementos como audio y video</li>
+            <li>Nuevo nivel de las formas</li>
+            <li>Desaparecen frame, center y big</li>
+        </ul>
+        <h4>¿Qué componentes de estructura y estilo tiene una tabla?</h4>
+        <p>El table, la creación de una tabla. El tr, o table row, que crea una hilera en la tabla. El td, o table data, que agrega los datos de la tabla. Y el th, o table header que será el encabezado de la tabla.</p>
+        <table>
+            <tr>
+                <th>Encabezado 1</th>
+                <th>Encabezado 2</th>
+            </tr>
+            <tr>
+                <td>Dato 1</td>
+                <td>Dato 2</td>
+            </tr>
+            <tr>
+                <td>Dato 3</td>
+                <td>Dato 4</td>
+            </tr>
+        </table>
+        <h4>¿Cuáles son los principales controles de una forma HTML5?</h4>
+        <p>form, fieldset, legend, label, input, burron, select, datalist, optgroup, option, textarea, keygen, output, progress, y meter.</p>
+        <h4>¿Qué tanto soporte HTML5 tiene el navegador que utilizas? Puedes utilizar la siguiente página para descubrirlo: http://html5test.com/ (Al responder la pregunta recuerda poner el navegador que utilizas)</h4>
+        <p>En mi caso, al usar un navegador Chrome, mi navegador soporta 476 de 555 puntos.</p>
+        <h3>Sobre el ciclo de vida y desarrollo de los sistemas de información:</h3>
+        <h4>¿Cuál es el ciclo de vida de los sistemas de información?</h4>
+        <p>El ciclo de vida de un sistema de información es</p>
+        <ol>
+            <li>Nacimiento</li>
+            <li>Desarrollo</li>
+            <li>Operación</li>
+            <li>Mantenimiento</li>
+            <li>Muerte</li>
+        </ol>
+        <h4>¿Cuál es el ciclo de desarrollo de sistemas de información?</h4>
+        <p>El ciclo de desarrollo de un sistema de información es</p>
+        <ol>
+            <li>Planificación</li>
+            <li>Análisis de requerimientos</li>
+            <li>Diseño</li>
+            <li>Desarrollo</li>
+            <li>Integración y pruebas</li>
+            <li>Implementación</li>
+            <li>Mantenimiento</li>
+        </ol>
+    </div>
+    <div id="css" class="seccion">
+        <h2>CSS</h2>
+        <h4>Como ingeniero de software ¿cuál es tu recomendación sobre el uso de !important en un CSS?</h4>
+        <div>kdfnlaksfjlkasd</div>
+        <h4>Si se pone una imagen de fondo en una página HTML, ¿por qué debe escogerse con cuidado?</h4>
+        <h4>Como ingeniero de software, ¿cuál es tu recomendación al elegir las unidades de un propiedad de estilo entre %, px y pt?</h4>
+        <h4>¿Por qué el uso de una versión minimizada del CSS mejora el rendimiento del sitio?</h4>
+    </div>
+    <div id="referencias">
+        <h3>Referencias</h3>
+        <div><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" target="_blank">Pseudo-classes</a></div>
+    </div>
 </body>
-<hr>
-<hr>
 <footer>
     <h4 id="nombreMatricula">Paulina Cardoso Fuentes - A01701490</h4>
 </footer>

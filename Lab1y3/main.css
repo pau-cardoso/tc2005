@@ -1,13 +1,21 @@
-@import 'https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Nunito+Sans:wght@300;400&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Nunito+Sans:wght@300;400&family=Parisienne&display=swap';
+
+html {
+    height: 100%;
+    width: 100%;
+}
 
 body {
     margin: 0 auto;
-    max-width: 50em;
+    padding: 0 auto;
+    border: 0 auto;
+    min-height: 100%;
+    width: 100%;
+    position: center;
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 400;
     line-height: 1.5;
-    padding: 4em 1em;
-    color: #555;
+    color: rgba(43,51,73,1);
 }
 
 header {
@@ -15,7 +23,8 @@ header {
     text-align: center;
     background-image: url("https://images.pexels.com/photos/2653362/pexels-photo-2653362.jpeg?auto=compress&cs=tinysrgb&h=650&w=940");
     background-size: cover;
-    background-position: center;
+    background-position: center top;
+    background-repeat: no-repeat;
     line-height: 1.2;
     padding: 7vw 2em;
 }
@@ -24,6 +33,14 @@ h1 {
     color: white;
     font-family: 'Montserrat', sans-serif;
     font-size: 7vw;
+}
+
+h2 {
+    padding: 10px;
+    color: #2b3349;
+    font-size: 3em;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px;
 }
 
 h3 {
@@ -67,4 +84,51 @@ table, th, td {
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 300;
     color: rgb(115, 75, 160);
+}
+
+.seccion {
+    padding: 10 em;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    background: rgb(228, 253, 171);
+    color: cadetblue;
+}
+
+hr {
+    border: 2px solid rgb(55, 209, 189);
+}
+
+#html {
+    background: white;
+    padding: 0 vw;
+    margin: 0px;
+    border: 0px;
+}
+
+#css {
+    background: #eae5df;
+}
+
+#css h4 {
+    color: rgba(172,160,160,1);
+}
+
+#referencias {
+    padding: 5vw 3vw;
+    background-color: #2b3349;
+    color: white;
+}
+
+#referencias h3 {
+    text-align: left;
+    font-size: 4em;
+    font-family: 'Parisienne', cursive;
+    font-weight: 100;
+    color: #d7b58c;
+    margin: 10px;
 }
