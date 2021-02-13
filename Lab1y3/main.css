@@ -103,15 +103,10 @@ th {
 }
 
 .respuesta {
-    padding-left: 25px;
+    padding-left: 30px;
     padding-top: 10px;
 }
 
-#nombreMatricula {
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 300;
-    color: rgb(115, 75, 160);
-}
 
 .seccion {
     padding-top: 10px;
@@ -155,16 +150,24 @@ hr {
 }
 
 #referencias {
-    padding: 5vw 3vw;
+    padding: 30px;
     background-color: #2b3349;
     color: white;
 }
 
 #referencias h3 {
+    padding: 0px;
     text-align: left;
     font-size: 4em;
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 100;
     color: #d7b58c;
     margin: 10px;
+}
+
+#nombreMatricula {
+    padding: 25px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 500;
+    color: #2b3349;
 }
