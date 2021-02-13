@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;800&family=Nunito+Sans:wght@300;400&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Nunito+Sans:wght@300;400&display=swap';
 
 body {
     margin: 0 auto;
@@ -10,10 +10,26 @@ body {
     color: #555;
 }
 
+header {
+    background-color: darkcyan;
+    text-align: center;
+    background-image: url("https://images.pexels.com/photos/2653362/pexels-photo-2653362.jpeg?auto=compress&cs=tinysrgb&h=650&w=940");
+    background-size: cover;
+    background-position: center;
+    line-height: 1.2;
+    padding: 7vw 2em;
+}
+
 h1 {
-    color: #534faa;
+    color: white;
     font-family: 'Montserrat', sans-serif;
-    font-size: 2.5 em;
+    font-size: 7vw;
+}
+
+h3 {
+    color: #534faa;
+    font-weight: 600;
+    line-height: 1.5;
 }
 
 h4 {
@@ -27,4 +43,15 @@ h4 {
 
 strong {
     color: #333;
+    font-style: italic;
+}
+
+ol, ul, li { 
+    margin-left: 10px 
+}
+
+#nombreMatricula {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 300;
+    color: rgb(115, 75, 160);
 }
