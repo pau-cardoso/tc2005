@@ -37,6 +37,26 @@ function cuadradosCubos() {
  * @input Un arreglo de números
  * @return La cantidad de números negativos en el arreglo, la cantidad de 0's, y la cantidad de valores mayores a 0 en el arreglo
  */
+function contador(arreglo) {
+    let negativos = 0;
+    let ceros = 0;
+    let positivos = 0;
+    for (let i = 0; i < arreglo.length; i++) {
+        if (arreglo[i] < 0 ) {
+            negativos++;
+        }
+        else if (arreglo[i] === 0 ) {
+            ceros++;
+        }
+        else if (arreglo[i] > 0 ) {
+            positivos++;
+        }
+    }
+    document.write("<p><strong>Numeros negativos:</strong><span></span>",negativos,"</p>")
+    document.write("<p><strong>Ceros:</strong><span></span>",ceros,"</p>")
+    document.write("<p><strong>Numeros positivos:</strong><span></span>",positivos,"</p>")
+    document.write("<div><button onclick='reload()'>Volver a la pagina de inicio</button></div>");
+}
 
 
  /**
