@@ -1,9 +1,27 @@
+// Funcion para regresar a la pagina de inicio
+function reload() { 
+    location.reload() 
+}
+
 /**
- * 1. 
+ * 1. cuadrados y cubos
  * @input número pedido con un prompt
  * @return Una tabla con los números del 1 al número dado con sus cuadrados y cubos. 
  * Utiliza document.write para producir la salida
  */
+function cuadradosCubos() {
+    let num = Number(prompt("Introduzca un numero: "));
+    document.write("<table>","<tr>","<th>Numero</th>","<th>Cuadrado</th>","<th>Cubo</th>","</tr>");
+    for (let i = 1; i <= num; i++) {
+        document.write("<tr>");
+        document.write("<td>",i,"</td>");
+        document.write("<td>",i**2,"</td>");
+        document.write("<td>",i**3,"</td>");
+        document.write("</tr>");
+    }
+    document.write("</table>")
+    document.write("<div><button onclick='reload()'>Volver a la pagina de inicio</button></div>");
+}
 
 
 /**
