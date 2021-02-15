@@ -30,6 +30,21 @@ function cuadradosCubos() {
  * @return  La página debe indicar si el resultado fue correcto o incorrecto, 
  *          y el tiempo que tardó el usuario en escribir la respuesta.
  */
+function suma() {
+    let a = Math.floor(Math.random() * 10), b = Math.floor(Math.random() * 10);
+    let startTime = new Date().getSeconds();
+    let respuesta = Number(prompt("Cuál es la suma de "+a+"+"+b+"?"));
+    let endTime = new Date().getSeconds();
+    if ( respuesta === (a+b) ) {
+        document.write("<p>Respuesta correcta!</p>");
+        document.write("<p>Te tardaste "+(endTime-startTime)+" segundos</p>");
+    }
+    else {
+        document.write("<p>Respuesta incorrecta</p>")
+        document.write("<p>Te tardaste "+(endTime-startTime)+" segundos</p>");
+    }
+    document.write("<div><button onclick='reload()'>Volver a la pagina de inicio</button></div>");
+}
 
 
  /**
