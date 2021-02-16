@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Validacion de password</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>Validacion de password</h1>
+        </header>
+        <form id="formulario">
+            <label>Ingrese su contraseña:</label>
+            <input 
+                id="password1"
+                type="password" 
+                pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+                title="La contraseña debe contener al menos 8 caracteres alfanumericos, una mayúscula, una minúscula y un número">
+            <br>
+            <label>Repita su contraseña:</label>
+            <input id="password2" type="password">
+            <br>
+            <input id="botonEnviar" type="submit" value="Enviar">
+        </form>
+    </body>
+    <script src="script.js"></script>
+</html>
