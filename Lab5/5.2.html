@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Tiendita</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>PauTiendita</h1>
+        </header>
+        <div id="tienda">
+            <span>
+            <div id="articulo1" class="items">
+                <h3 class="articulos">Chips Fuego</h4>
+                <img src="https://www.heb.com.mx/media/catalog/product/cache/9f5ec31302878493d9ed0ac40a398e12/3/3/338827_2.png" alt="Chips Fuego">
+                <h4><strong>Precio:</strong> $15</h4>
+                <span> Cantidad: <input type="number" class="cantidades" id="cant1" name="cantidad" value="0"></span>
+            </div>
+            <div id="articulo2" class="items">
+                <h3 class="articulos">Coca Cola 600 ml</h4>
+                <img src="https://s3.amazonaws.com/com.coca-cola.latamclientes-content.prod/products/gaseosas/coca-cola-original-600.png" alt="Coca Cola 600 ml">
+                <h4><strong>Precio:</strong> $16</h4>
+                <span> Cantidad: <input type="number" class="cantidades" id="cant2" name="cantidad2" value="0"></span>
+            </div>
+            <div id="articulo3" class="items">
+                <h3 class="articulos">Salsa Valentina</h4>
+                <img src="https://www.salsavalentina.mx/images/Valentina-370.png" alt="Salsa Valentina">
+                <h4><strong>Precio:</strong> $10</h4>
+                <span> Cantidad: <input type="number" class="cantidades" id="cant3" name="cantidad3" value="0"></span>
+            </div>
+        </span>
+            <br>
+            <br><button id="botonComprar" onclick="resumen()">Comprar</button>
+        </div> <br>
+        <div id="checkout"></div>
+        <div id="preguntas">
+            <br>
+            <hr>
+            <h2>Preguntas</h2>
+            <h3>¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?</h3>
+            <p>Porque de esta manera nos ahorramos inconveniencias desde el inicio y podemos alertar al usuario si es que algún dato es erróneo, dando así una mejor experiencia de usuario.</p>
+            <h3>¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?</h3>
+            <p>Hay varias maneras pero puedes simplemente deshabilitar javascript en el navegador.</p>
+            <h3>Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?</h3>
+            <p>Porque en la mayoría de los casos si se ocupa tener la validación de JavaScript para el usuario. Pero hay veces que no necesariamente sea un requisito y pueda saltarse.</p>
+        </div>
+        <footer>
+            <h2 id="referencias">Referencias</h2>
+            <span>Validación de formularios de datos - Aprende sobre desarrollo web | MDN. (2020, November 19). Mozilla.org. Recuperado de <a target="_blank" href="https://developer.mozilla.org/es/docs/Learn/HTML/Forms/Validacion_formulario_datos">https://developer.mozilla.org/es/docs/Learn/HTML/Forms/Validacion_formulario_datos</a></span><br>
+            <span> HTML Input Types. (2021). W3schools.com. <a target="_blank" href="https://www.w3schools.com/html/html_form_input_types.asp">https://www.w3schools.com/html/html_form_input_types.asp</a></span><br>
+            <span> Document.getElementsByClassName() - Referencia de la API Web | MDN. (2019, March 23). Mozilla.org. <a target="_blank" href="https://developer.mozilla.org/es/docs/Web/API/Document/getElementsByClassName">https://developer.mozilla.org/es/docs/Web/API/Document/getElementsByClassName</a></span><br>
+            <span> HTML Event Attributes. (2021). W3schools.com. <a target="_blank" href="https://www.w3schools.com/tags/ref_eventattributes.asp">https://www.w3schools.com/tags/ref_eventattributes.asp</a></span><br>
+            <span> <a target="_blank" href="">APA</a></span><br>
+        </footer>
+        <script src="5.2.js"></script>
+    </body>
+</html>
