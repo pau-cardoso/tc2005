@@ -44,5 +44,5 @@ function changeText(element) {
     element.style.fontFamily = "'Montserrat', sans-serif";
     element.style.fontWeight = '600';
     element.style.fontSize = "2em";
-    element.style.color = "#4a919e"
+    element.style.color = "#4a919e";
 }

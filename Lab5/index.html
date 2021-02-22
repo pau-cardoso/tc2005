@@ -1,15 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Tiendita</title>
+        <title>Lab 5</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="style.css" rel="stylesheet">
     </head>
     <body>
         <header>
-            <h1>PauTiendita</h1>
+            <div>
+                <h1>Lab 5</h1>
+                <p>Paulina Cardoso</p>
+                <p>A01701490</p>
+            </div>
         </header>
+        <br>
+        <h1>Validación de password</h1>
+        <form id="formulario">
+            <label>Ingrese su contraseña:</label>
+            <input 
+                id="password1"
+                type="password" 
+                pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+                title="La contraseña debe contener al menos 8 caracteres alfanuméricos, una mayúscula, una minúscula y un número">
+            <br>
+            <label>Repita su contraseña:</label>
+            <input id="password2" type="password">
+            <br><br>
+            <input id="botonEnviar" type="submit" value="Enviar">
+        </form>
+        <br><br>
+        <hr> <br>
+        <h1>PauTiendita</h1>
         <div id="tienda">
             <span>
             <div id="articulo1" class="items">
@@ -54,6 +76,7 @@
             <span> HTML Event Attributes. (2021). W3schools.com. <a target="_blank" href="https://www.w3schools.com/tags/ref_eventattributes.asp">https://www.w3schools.com/tags/ref_eventattributes.asp</a></span><br>
             <span> JavaScript Events. (2015). W3schools.com. <a target="_blank" href="https://www.w3schools.com/js/js_events.asp">https://www.w3schools.com/js/js_events.asp</a></span><br>
         </footer>
-        <script src="5.2.js"></script>
+        <script src="JavaScript/5.1.js"></script>
+        <script src="JavaScript/5.2.js"></script>
     </body>
 </html>

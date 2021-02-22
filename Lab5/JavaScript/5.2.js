@@ -45,4 +45,7 @@ function changeText(element) {
     element.style.fontWeight = '600';
     element.style.fontSize = "2em";
     element.style.color = "#4a919e"
+    if (document.getElementById("mensajeIVA") == null) {
+        element.insertAdjacentHTML('afterend', '<p id="mensajeIVA">El total se calcula sumando el 16% del subtotal al subtotal, agregando asi el valor de IVA.</p>');
+    }
 }

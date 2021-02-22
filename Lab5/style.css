@@ -5,6 +5,23 @@ html {
     width: 100%;
 }
 
+header {
+    background-color: #212e53;
+    padding: 1.5em;
+    color: white;
+}
+
+header h1 {
+    font-size: 3em;
+    color: white;
+    margin: 0 auto;
+}
+
+header p {
+    margin: 0;
+    font-size: 14px;
+}
+
 body {
     margin: 0 auto;
     padding: 0 auto;
@@ -56,6 +73,11 @@ img{
     margin-right: auto;
     width: 50%;
     height: 40%;
+}
+
+hr {
+    border: medium #212e53;
+    border-style: solid none none;
 }
 
 #articulo3 img {
