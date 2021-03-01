@@ -22,10 +22,7 @@ const server = http.createServer( (request, response) => {
     }
 
     else if (request.url == "/nuevo-perro" && request.method == "GET") {
-        response.setHeader('Content-Type', 'text/html');
-        response.write("<html>");
-        response.write("<head><meta charset='UTF-8'><title>Añadir perro</title></head>");
-        response.write("<body><h1>Añadir perro</h1></body>");
+     response.write("<body><h1>Añadir perro</h1></body>");
         response.write('<form action="nuevo-perro" method="POST"><input type="text" name="nombre"><input type="submit" value="Registrar perro en guarderia"></form>');
         response.write("</html>");
     }
@@ -42,7 +39,10 @@ const server = http.createServer( (request, response) => {
             response.writeHead(301,{Location:'/perros'});
             return response.end();
         });
-    }
+    }     response.setHeader('Content-Type', 'text/html');
+        response.write("<html>");
+        response.write("<head><meta charset='UTF-8'><title>Añadir perro</title></head>");
+      
     else if (request.url == "/home") {
         response.setHeader('Content-Type', 'text/html');
         response.write("<html>");

@@ -1,31 +1,22 @@
 const { response, request } = require('express');
 const express = require('express');
-const bodyParser = require('body-parser');
 const app = express();
+const rutasPerros = require('./routes/perros');
+const rutasGuarderia = require('./routes/guarderia');
 
-// Middleware
-app.use(bodyParser.urlencoded({extended: false}));
+app.use('/perros', rutasPerros);
+app.use('/guarderia', rutasGuarderia);
 
-app.use('/alguna-ruta', (request, response, next) => {
-    console.log(request.body);
+app.use( '/home', (request, response, next) => {
+    let html = '<h1>Bienvenido a la guarderia de perros</h1>';
+    html += '<h3>Las rutas son:</h3>';
+    html += '<p><ul><li>/home</li><li>/perros</li><li>/perros/nuevo-perro</li><li>/guarderia</li><li>/guarderia/precios</li></ul></p>';
+    response.send(html);
 });
 
 app.use( (request, response, next) => {
-    console.log('Middleware!');
-    next(); // Le permite a la peticion avanzar hacia el siguiente middleware
-});
-
-app.use( '/personajes', (request, response, next) => {
-    response.send('<h1>Personajes</h1>');
-})
-
-app.use( '/', (request, response, next) => {
-    response.send('<h1>Hola mundo</h1>');
-})
-
-app.use( (request, response, next) => {
-    console.log('Otro middleware!');
-    response.send('Hola mundo!'); // manda la respuesta
+    response.status(404);
+    response.send('Error 404: Page not found');
 });
 
 app.listen(3000);
