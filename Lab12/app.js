@@ -20,6 +20,10 @@ app.use( '/sobremi', (request, response, next) => {
     response.render('Lab1');
 });
 
+app.use( '/', (request, response, next) => {
+    response.render('pregunta');
+});
+
 app.use( (request, response, next) => {
     response.status(404);
     response.send('Error 404: Page not found');
