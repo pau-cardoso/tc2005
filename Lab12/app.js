@@ -13,10 +13,7 @@ app.use('/perros', rutasPerros);
 app.use('/guarderia', rutasGuarderia);
 
 app.use( '/home', (request, response, next) => {
-    let html = '<h1>Bienvenido a la guarderia de perros</h1>';
-    html += '<h3>Las rutas son:</h3>';
-    html += '<p><ul><li>/home</li><li>/perros</li><li>/perros/nuevo-perro</li><li>/guarderia</li><li>/guarderia/precios</li></ul></p>';
-    response.send(html);
+    response.render('Home');
 });
 
 app.use( '/sobremi', (request, response, next) => {
