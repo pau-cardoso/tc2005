@@ -1,11 +1,11 @@
 <%- include('includes/head.ejs') %>
 <%- include('includes/navbar.ejs') %>
 
-<body>
-    <h1>Perros en guarderia</h1>
-    <ul>
-        <% perros.forEach(perro => { %>
-        <li> <%= perro %> </li>
-        <% }); %>
-    </ul>
-</body>
+<h1>Perros en guarderia</h1>
+<ul>
+    <% perros.forEach(perro => { %>
+    <li> <%= perro %> </li>
+    <% }); %>
+</ul>
+
+<%- include('includes/footer.ejs') %>
