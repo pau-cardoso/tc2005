@@ -1,0 +1,12 @@
+<%- include('includes/head.ejs') %>
+
+Perros</title>
+</head>
+<body>
+    <h1>Perros en guarderia</h1>
+    <ul>
+        <% perros.forEach(perro => { %>
+        <li> <%= perro %> </li>
+        <% }); %>
+    </ul>
+</body>
