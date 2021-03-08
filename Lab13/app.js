@@ -13,7 +13,9 @@ app.use('/perros', rutasPerros);
 app.use('/guarderia', rutasGuarderia);
 
 app.use( '/home', (request, response, next) => {
-    response.render('Home');
+    response.render('Home', {
+        titulo: 'Home'
+    });
 });
 
 app.use( '/sobremi', (request, response, next) => {
@@ -21,7 +23,9 @@ app.use( '/sobremi', (request, response, next) => {
 });
 
 app.use( '/', (request, response, next) => {
-    response.render('pregunta');
+    response.render('pregunta', {
+        titulo: 'Preguntas'
+    });
 });
 
 app.use( (request, response, next) => {

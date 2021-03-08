@@ -1,7 +1,9 @@
 const Perro = require('../models/Perro');
 
 exports.getNuevoPerro = (request, response, next) => {
-    response.render('nuevoPerro');
+    response.render('nuevoPerro', {
+        titulo: 'Nuevo perro'
+    });
 };
 
 exports.postNuevoPerro = (request, response, next) => {
@@ -13,6 +15,7 @@ exports.postNuevoPerro = (request, response, next) => {
 exports.get = (request, response, next) => {
     const perros = Perro.fetchAll();
     response.render('perros', {
-        perros: perros
+        perros: perros,
+        titulo: 'Perros'
     });
 };
