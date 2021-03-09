@@ -13,8 +13,10 @@ exports.postLogin = (request, response, next) => {
     response.redirect('/perros');
 };
 
-exports.logout = (request, response, next) => {
-    request.session.destroy(() => {
+exports.getLogout = (request, response, next) => {
+    request.session.destroy((err) => {
+        console.log(err);
+        console.log('Logout');
         response.redirect('/'); //Este código se ejecuta cuando la sesión se elimina.
     });
 };

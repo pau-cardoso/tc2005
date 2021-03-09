@@ -41,6 +41,7 @@ app.use( '/sobremi', (request, response, next) => {
 });
 
 app.use( '/', (request, response, next) => {
+    console.log(request.session);
     response.render('pregunta', {
         titulo: 'Preguntas',
         isLoggedIn: request.session.isLoggedIn === true ? true : false
