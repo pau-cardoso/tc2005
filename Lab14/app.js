@@ -1,9 +1,12 @@
 const express = require('express');
 const app = express();
+const path = require('path');
+var cookieParser = require('cookie-parser');
+
 const rutasPerros = require('./routes/perros');
 const rutasGuarderia = require('./routes/guarderia');
-const path = require('path');
 
+app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('view engine', 'ejs');
