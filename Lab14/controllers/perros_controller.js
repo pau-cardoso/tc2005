@@ -2,7 +2,8 @@ const Perro = require('../models/Perro');
 
 exports.getNuevoPerro = (request, response, next) => {
     response.render('nuevoPerro', {
-        titulo: 'Nuevo perro'
+        titulo: 'Nuevo perro',
+        isLoggedIn: request.session.isLoggedIn === true ? true : false
     });
 };
 
@@ -22,6 +23,7 @@ exports.get = (request, response, next) => {
     console.log(request.cookies.ultimo_perro);
     response.render('perros', {
         perros: perros,
-        titulo: 'Perros'
+        titulo: 'Perros',
+        isLoggedIn: request.session.isLoggedIn === true ? true : false
     });
 };

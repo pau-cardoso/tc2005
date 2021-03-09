@@ -15,12 +15,19 @@
             <li class="nav-item">
                 <a class="nav-link" href="/perros" >Perros</a>
             </li>
+            <% if (isLoggedIn) { %>
             <li class="nav-item">
                 <a class="nav-link" href="/perros/nuevo-perro" >Nuevo perro</a>
             </li>
+            <% } %>
             <li class="nav-item">
                 <a class="nav-link" href="/preguntas" >Preguntas</a>
             </li>
+        </ul>
+        <ul id="nav-mobile" class="rigth hide-on-med-and-down">
+            <% if (isLoggedIn) { %>
+                <li><a href="/users/logout">Salir</a></li>
+            <% } %>
         </ul>
     </div>
 </nav>
