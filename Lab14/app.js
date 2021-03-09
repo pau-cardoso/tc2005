@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 
@@ -12,6 +13,8 @@ app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 //Para accerder fácilmente a los datos de las formas
+app.use(bodyParser.urlencoded({extended: false}));
+//Para acceder a los valores de las cookies
 app.use(cookieParser());
 
 // Para trabajar con sesiones 
@@ -29,9 +32,9 @@ app.use('/perros', rutasPerros);
 app.use('/guarderia', rutasGuarderia);
 app.use('/users', rutasUsers);
 
-app.use( '/home', (request, response, next) => {
-    response.render('Home', {
-        titulo: 'Home',
+app.use( '/preguntas', (request, response, next) => {
+    response.render('pregunta', {
+        titulo: 'Preguntas',
         isLoggedIn: request.session.isLoggedIn === true ? true : false
     });
 });
@@ -40,10 +43,10 @@ app.use( '/sobremi', (request, response, next) => {
     response.render('Lab1');
 });
 
-app.use( '/', (request, response, next) => {
+app.get( '/', (request, response, next) => {
     console.log(request.session);
-    response.render('pregunta', {
-        titulo: 'Preguntas',
+    response.render('home', {
+        titulo: 'Home',
         isLoggedIn: request.session.isLoggedIn === true ? true : false
     });
 });
