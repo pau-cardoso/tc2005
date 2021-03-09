@@ -1,10 +1,12 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const session = require('express-session');
 var cookieParser = require('cookie-parser');
 
 const rutasPerros = require('./routes/perros');
 const rutasGuarderia = require('./routes/guarderia');
+const rutasUsers = require('./routes/users');
 
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
@@ -14,6 +16,7 @@ app.set('views', 'views');
 
 app.use('/perros', rutasPerros);
 app.use('/guarderia', rutasGuarderia);
+app.use('/users', rutasUsers);
 
 app.use( '/home', (request, response, next) => {
     response.render('Home', {
