@@ -16,11 +16,6 @@ exports.postNuevoPerro = (request, response, next) => {
 
 exports.get = (request, response, next) => {
     const perros = Perro.fetchAll();
-    console.log('Cookie: ' + request.get('Cookie'));
-    console.log(request.get('Cookie').split('=')[1]);
-    // Con cookie parser
-    console.log(request.cookies);
-    console.log(request.cookies.ultimo_perro);
     response.render('perros', {
         perros: perros,
         titulo: 'Perros',

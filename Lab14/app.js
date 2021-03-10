@@ -44,7 +44,6 @@ app.use( '/sobremi', (request, response, next) => {
 });
 
 app.get( '/', (request, response, next) => {
-    console.log(request.session);
     response.render('home', {
         titulo: 'Home',
         isLoggedIn: request.session.isLoggedIn === true ? true : false
