@@ -1,0 +1,62 @@
+Revisa el contenido de la tabla materiales y determina si existe alguna inconsistencia en el contenido de la tabla. 
+¿Cuál es? 
+Hay 2 registros con la misma clave (1000)
+
+¿A qué se debe?
+A que no se definió como Primary Key la Clave dentro de la tabla Materiaales
+
+¿Qué ocurrió?
+SQL marcó error debido a que no se cumple la regla de una primary key donde el valor tiene que ser único de cada registro.
+
+¿Qué información muestra esta consulta?
+Muestra toda la información de la tabla Materiales y sus debidas restricciones, como el tipo, nombre y acciones. 
+
+¿Qué sentencias utilizaste para definir las llaves primarias?
+ALTER TABLE Proveedores add constraint llaveProveedores PRIMARY KEY (RFC)
+ALTER TABLE Proyectos add constraint llaveProyecto PRIMARY KEY (Numero)
+
+¿Qué sentencias utilizaste para definir este constrait?
+ALTER TABLE Entregan add constraint llaveEntregas PRIMARY KEY (Clave, RFC, Numero)
+
+¿Qué particularidad observas en los valores para clave, rfc y numero?
+Que no existen esos valores en las respectivas tablas que les corresponden. Es decir, que esos valores necesitan existir en las otras tablas para que se puedan relacionar entre ellas dentro de la tabla de Entregan, lo cual no es el caso.
+
+¿Cómo responde el sistema a la inserción de este registro?
+Si es posible y te deja agregarlos, pero no estará cumpliendo la funcionalidad que necesitaremos para relacionar las tablas entre sí. 
+
+¿Qué significa el mensaje que emite el sistema?
+Que no te deja agregar esos datos debido a que no existen tales datos en las demás tablas, exactamente como lo queríamos.
+
+¿Qué significado tiene la sentencia anterior?
+Relaciona las llaves primarias de la tabla Entregan con las llaves primarias de las tablas que les corresponde. Es decir, que hace una unión que referencia a la llave a la que le corresponde el dato para unir correctamente todas las tablas. 
+
+¿Qué significan las columnas de esas consultas?
+Son tanto las llaves foráneas, o bien, primarias de cada tabla.
+
+¿Qué uso se le está dando a GETDATE()?
+Recupera la fecha en la que se hizo la inserción del nuevo registro.
+
+¿Tiene sentido el valor del campo de cantidad?
+No, debido a que un pedido debería tener una cantidad mayor a cero, pues no puedes entregar algo que no existe.
+
+¿Cómo responde el sistema?
+No te deja hacerlo porque marca error
+
+¿Qué significa el mensaje?
+El sistema marca un error debido a que ya le pusimos una restricción y no se permite que se agreguen registros que tengan una cantidad menor o igual a 0.
+
+
+
+***** Integridad referencial *****
+Cuando se habla de integridad referencial en una base de datos se refiere a la consistencia 
+entre los datos y las tablas de datos. Es decir, los datos que referencias a otros deben ser 
+correctos. Esto asegura que no se ingresen datos que no estén en la tabla principal.
+
+
+
+***** Referencias *****
+Conceptos Integridad referencial. (2021). Aulaclic.es. https://www.aulaclic.es/sql/b_8_1_1.htm
+¿Qué es la integridad referencial y cómo puede evitar estos problemas un programador? | Techlandia. (2013). Techlandia. https://techlandia.com/integridad-referencial-evitar-estos-problemas-programador-info_262424/
+
+‌
+‌
