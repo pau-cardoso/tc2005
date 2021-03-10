@@ -1,0 +1,17 @@
+¿Que muestra la instrucción? sp_help materiales
+Muestra todas la información y características de la tabla dada
+
+¿Qué efecto tuvo esta acción?
+Se añade una nueva tabla dentro de la base de dato
+
+¿Qué utilidad tiene esta manera de ejecutar los comandos de SQL?
+Es más organizado y rápido
+
+¿Qué relación tienen con las tablas de la base de datos? (checa su contenido)
+Son los datos que se cargaran a las tablas dentro de nuestra base de datos
+
+¿Qué relación tiene el contenido de este archivo (materiales.sql) con el formato en que se encuentran los datos en el archivo materiales.csv?
+En el formato de este .sql se especifica el archivo en el que se cargarán los datos y cómo están separados los datos entre sí para que se pueda poblar la tabla con los datos.
+
+¿Qué sucedió?
+Se muestran todos los registros dentro de la tabla Materiales con todos los campos que se introdujeron con los datos. 
