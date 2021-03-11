@@ -1,0 +1,105 @@
+/*
+Película(título, año, duración, encolor, presupuesto, nomestudio, idproductor)
+Elenco(título, año, nombre, sueldo)
+Actor(nombre, dirección, telefono, fechanacimiento, sexo)
+Productor(idproductor, nombre, dirección, teléfono)
+Estudio(nomestudio, dirección) 
+*/
+
+--1 Actrices de “Las brujas de Salem”
+
+--Sin subconsultas 
+
+SELECT Nombre
+FROM Actor A, Elenco E
+WHERE A.Nombre = E.Nombre
+AND Sexo = 'F' AND Titulo = 'Las brujas salem'
+
+--Con subconsultas
+
+SELECT Nombre
+FROM Elenco
+WHERE Titulo = 'Las brujas de salem'
+AND Nombre IN (SELECT Nombre
+FROM Actor
+WHERE Sexo ='F')
+
+--2 Nombres de los actores que aparecen en películas producidas por MGM en 1995
+
+--Sin subconsultas
+
+SELECT E.nombre 
+FORM Pelicula P, Elenco E, Productor Pd
+WHERE P.año = 1995 AND Pd.nombre = 'MGM' AND Pd.id_productor = P.id_productor
+
+--Con subconsultas
+
+SELECT E.nombre 
+FROM Elenco E, Pelicula P
+WHERE P.año = 1995 AND P.id_productor in (SELECT id_productor FROM Productor WHERE nombre = 'MGM')
+
+--3 Películas que duran más que “Lo que el viento se llevó” (de 1939)
+
+--Sin subconsultas
+
+SELECT P.titulo
+FROM Pelicula P, Pelicula V
+WHERE V.titulo = 'Lo que el viento se llevó' AND P.duracion > V.duracion
+
+--Con subconsultas
+
+SELECT titulo
+FROM Pelicula 
+WHERE duracion > (SELECT duracion FROM Pelicula WHERE titulo = 'Lo que el viento se llevó')
+
+--4 Productores que han hecho más películas que George Lucas
+
+--Con subconsultas
+
+SELECT Pd.Nombre
+FROM Productor Pd, Pelicula P
+WHERE Pd.id_productor = P.id_productor 
+HAVING count(*)  > (SELECT count(P.id_productor) 
+FROM Productor Pd, Pelicula P
+WHERE Pd.id_productor = P.id_productor 
+AND Pd.nombre = 'George Lucas')
+
+--5 Nombres de los productores de las películas en las que ha aparecido Sharon Stone
+
+-- sin subconsulta
+
+SELECT Pr.nombre
+FROM Productor Pr, Pelicula Pe, Elenco E
+WHERE Pr.idproductor = Pe.idproductor 
+    AND (Pe.titulo = E.titulo AND Pe.año = E.año)
+    AND E.elenco = “Sharon Stone”
+
+-- con subconsulta 
+
+SELECT nombre 
+FROM Productor
+WHERE idproductor IN (
+SELECT idproductor
+FROM Pelicula
+WHERE titulo IN (
+SELECT titulo
+        FROM Elenco
+        WHERE nombre = “Sharon Stone”)
+        
+--6 Título de las películas que han sido filmadas más de una vez 
+
+-- sin subconsulta
+
+SELECT titulo
+FROM Pelicula
+GROUP BY titulo
+    HAVING COUNT(*) > 1
+
+--con subconsulta
+
+SELECT titulo
+FROM Pelicula
+WHERE titulo IN (SELECT titulo 
+FROM Pelicula 
+GROUP BY titulo 
+HAVING COUNT(distinct año) > 1)
