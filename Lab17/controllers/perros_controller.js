@@ -15,15 +15,24 @@ exports.postNuevoPerro = (request, response, next) => {
 }
 
 exports.get = (request, response, next) => {
-    const perros = Perro.fetchAll();
-    console.log('Cookie: ' + request.get('Cookie'));
-    console.log(request.get('Cookie').split('=')[1]);
-    // Con cookie parser
-    console.log(request.cookies);
-    console.log(request.cookies.ultimo_perro);
-    response.render('perros', {
-        perros: perros,
-        titulo: 'Perros',
-        isLoggedIn: request.session.isLoggedIn === true ? true : false
-    });
+    Perro.fetchAll()
+        .then(([rows, fieldData]) => {
+            const perros = [];
+            for (let perro of rows) {
+                perros.push({
+                    nombre: perro.nombre, 
+                    imagen: perro.imagen
+                })
+            }
+            console.log(perros);
+            response.render('perros', {
+                perros: perros,
+                titulo: 'Perros',
+                isLoggedIn: request.session.isLoggedIn === true ? true : false
+            });
+        })
+        .catch(err => {
+            console.log(err);
+        });
+
 };
