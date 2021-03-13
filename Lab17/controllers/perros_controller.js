@@ -17,16 +17,8 @@ exports.postNuevoPerro = (request, response, next) => {
 exports.get = (request, response, next) => {
     Perro.fetchAll()
         .then(([rows, fieldData]) => {
-            const perros = [];
-            for (let perro of rows) {
-                perros.push({
-                    nombre: perro.nombre, 
-                    imagen: perro.imagen
-                })
-            }
-            console.log(perros);
             response.render('perros', {
-                perros: perros,
+                perros: rows,
                 titulo: 'Perros',
                 isLoggedIn: request.session.isLoggedIn === true ? true : false
             });
