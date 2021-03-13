@@ -11,6 +11,8 @@ router.get('/nuevo-perro', perrosController.getNuevoPerro);
 
 router.post('/nuevo-perro', perrosController.postNuevoPerro );
 
-router.get( '/', perrosController.get);
+router.get('/:perro_id', perrosController.getPerro);
+
+router.get( '/', perrosController.getPerros);
 
 module.exports = router;

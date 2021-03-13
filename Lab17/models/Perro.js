@@ -20,5 +20,12 @@ module.exports = class Perro {
     static fetchAll() {
         return db.execute('SELECT * FROM perros');
     }
+    
+    static fetchOne(id) {
+        return db.execute('SELECT * FROM perros WHERE id=?', [id]);
+    }
 
+    // static editName(newName, id) {
+    //     return db.execute('UPDATE perros SET nombre = ? WHERE perros.id = ?'), [newName, id];
+    // }
 }

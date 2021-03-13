@@ -14,10 +14,42 @@ exports.postNuevoPerro = (request, response, next) => {
 			response.setHeader( 'Set-Cookie', ['ultimo_perro =' + nuevoPerro.nombre + '; HttpOnly'] );
 			response.redirect('/perros');
     	}).catch(err => console.log(err));
-	}
-		
+}
 
-exports.get = (request, response, next) => {
+exports.getPerro = (request, response, next) => {
+	const id = request.params.perro_id;
+    Perro.fetchOne(id)
+        .then(([rows, fieldData]) => {
+            response.render('perros', {
+                perros: rows,
+                titulo: 'Perro',
+                isLoggedIn: request.session.isLoggedIn === true ? true : false
+            });
+        })
+        .catch(err => {
+            console.log(err);
+        });
+};
+
+/*
+exports.postPerro = (request, response, next) => {
+	const newName = request.body.nuevoNombre; 
+	const id = request.params.perro_id;
+    Perro.editName(newName, id)
+        .then(([rows, fieldData]) => {
+            response.render('perros', {
+                perros: rows,
+                titulo: 'Perro',
+                isLoggedIn: request.session.isLoggedIn === true ? true : false
+            });
+        })
+        .catch(err => {
+            console.log(err);
+        });
+};
+*/
+
+exports.getPerros = (request, response, next) => {
     Perro.fetchAll()
         .then(([rows, fieldData]) => {
             response.render('perros', {
@@ -29,5 +61,4 @@ exports.get = (request, response, next) => {
         .catch(err => {
             console.log(err);
         });
-
 };
