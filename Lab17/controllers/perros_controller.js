@@ -8,11 +8,14 @@ exports.getNuevoPerro = (request, response, next) => {
 };
 
 exports.postNuevoPerro = (request, response, next) => {
-    const nuevoPerro = new Perro(request.body.nombre);
-    nuevoPerro.save();
-    response.setHeader( 'Set-Cookie', ['ultimo_perro =' + nuevoPerro.nombre + '; HttpOnly'] );
-    response.redirect('/perros');
-}
+    const nuevoPerro = new Perro(request.body.nombre_perro, request.body.imagen_perro);
+    nuevoPerro.save()
+        .then(() => {
+			response.setHeader( 'Set-Cookie', ['ultimo_perro =' + nuevoPerro.nombre + '; HttpOnly'] );
+			response.redirect('/perros');
+    	}).catch(err => console.log(err));
+	}
+		
 
 exports.get = (request, response, next) => {
     Perro.fetchAll()
