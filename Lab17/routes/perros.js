@@ -13,6 +13,8 @@ router.post('/nuevo-perro', perrosController.postNuevoPerro );
 
 router.get('/:perro_id', perrosController.getPerro);
 
+router.post('/:perro_id', perrosController.postPerro);
+
 router.get( '/', perrosController.getPerros);
 
 module.exports = router;

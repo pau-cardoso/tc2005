@@ -25,7 +25,7 @@ module.exports = class Perro {
         return db.execute('SELECT * FROM perros WHERE id=?', [id]);
     }
 
-    // static editName(newName, id) {
-    //     return db.execute('UPDATE perros SET nombre = ? WHERE perros.id = ?'), [newName, id];
-    // }
+    static editName(newName, id) {
+        return db.execute('UPDATE perros SET nombre = ? WHERE perros.id = ?', [newName, id]);
+    }
 }

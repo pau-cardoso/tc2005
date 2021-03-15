@@ -20,7 +20,7 @@ exports.getPerro = (request, response, next) => {
 	const id = request.params.perro_id;
     Perro.fetchOne(id)
         .then(([rows, fieldData]) => {
-            response.render('perros', {
+            response.render('perroIndividual', {
                 perros: rows,
                 titulo: 'Perro',
                 isLoggedIn: request.session.isLoggedIn === true ? true : false
@@ -31,30 +31,26 @@ exports.getPerro = (request, response, next) => {
         });
 };
 
-/*
+
 exports.postPerro = (request, response, next) => {
 	const newName = request.body.nuevoNombre; 
 	const id = request.params.perro_id;
     Perro.editName(newName, id)
         .then(([rows, fieldData]) => {
-            response.render('perros', {
-                perros: rows,
-                titulo: 'Perro',
-                isLoggedIn: request.session.isLoggedIn === true ? true : false
-            });
+            response.redirect('/perros');
         })
         .catch(err => {
             console.log(err);
         });
 };
-*/
+
 
 exports.getPerros = (request, response, next) => {
     Perro.fetchAll()
         .then(([rows, fieldData]) => {
             response.render('perros', {
                 perros: rows,
-                titulo: 'Perros',
+                titulo: 'Perro',
                 isLoggedIn: request.session.isLoggedIn === true ? true : false
             });
         })
