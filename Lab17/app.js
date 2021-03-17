@@ -53,7 +53,10 @@ app.get( '/', (request, response, next) => {
 
 app.use( (request, response, next) => {
     response.status(404);
-    response.send('Error 404: Page not found');
+    response.render('error404', {
+        titulo: 'Error 404',
+        isLoggedIn: request.session.isLoggedIn === true ? true : false
+    });
 });
 
 app.listen(8080);
