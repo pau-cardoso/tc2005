@@ -1,0 +1,25 @@
+<%- include('includes/head.ejs') %>
+<%- include('includes/navbar.ejs') %>
+
+<div class="container-fluid p-4">
+    <h1 class="mb-4">Perros en guarderia</h1>
+    <div class="row">
+        <% perros.forEach(perro => { %>
+            <div class="view col-12 col-sm-6 col-md-4 col-lg-4">
+                <div class="card hoverable mb-4 hover-shadow">
+                    <img class="card-img-top" src="<%= perro.imagen %>" alt="Perrito">
+                    <div class="card-body d-flex justify-content-between">
+                        <h4 class="card-title"><%= perro.nombre %></h4>
+                        <% if (isLoggedIn) { %>
+                            <form action="/perros/<%= perro.id %>" method="GET">
+                                <button class="btn btn-outline-secondary">Editar</button>
+                            </form>
+                        <% } %> 
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<%- include('includes/footer.ejs') %>
