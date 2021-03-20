@@ -21,9 +21,13 @@ module.exports = class User {
             }).catch(err => console.log(err));
     }
     
-    static fetchOne(username, password) {
-        return db.execute('SELECT * FROM usuarios WHERE username=? AND password=?', [username, password]);
+    static fetchOne(username) {
+        return db.execute('SELECT * FROM usuarios WHERE username=?', [username]);
     }
+    
+    // static fetchOne(username, password) {
+    //     return db.execute('SELECT * FROM usuarios WHERE username=? AND password=?', [username, password]);
+    // }
 
     // static editName(newName, id) {
     //     return db.execute('UPDATE perros SET nombre = ? WHERE perros.id = ?', [newName, id]);
