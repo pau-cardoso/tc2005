@@ -4,6 +4,8 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
+const csrf = require('csurf');
+const csrfProtection = csrf();
 
 const rutasPerros = require('./routes/perros');
 const rutasGuarderia = require('./routes/guarderia');
@@ -26,7 +28,7 @@ app.use(session({
 
 // Para acceder a los recursos de la carpeta public
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(csrfProtection); 
 
 app.use('/perros', rutasPerros);
 app.use('/guarderia', rutasGuarderia);

@@ -3,6 +3,7 @@
 
 <h1>Añadir perro</h1>
 <form action="nuevo-perro" method="POST">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
     <input type="text" name="nombre_perro">
     <input type="text" name="imagen_perro">
     <input type="submit" value="Registrar perro en guarderia">

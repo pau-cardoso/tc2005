@@ -1,11 +1,9 @@
 const Perro = require('../models/Perro');
 
 exports.getNuevoPerro = (request, response, next) => {
-    if (!request.session.isLoggedIn) {
-        return response.redirect('/users/login');
-    }
-    response.render('nuevoPerro', {
+        response.render('nuevoPerro', {
         titulo: 'Nuevo perro',
+        csrfToken: request.csrfToken(),
         isLoggedIn: request.session.isLoggedIn === true ? true : false
     });
 };

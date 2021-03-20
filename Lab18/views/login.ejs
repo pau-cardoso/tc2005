@@ -7,6 +7,7 @@
         <span class="text-danger"> <%= error %>  </span> 
     <% } %> 
     <form action="/users/login" method="POST">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
         <label for="usuario">Usuario</label>
         <input type="text" name="usuario">
         <label for="password">Contraseña</label>
