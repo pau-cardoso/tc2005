@@ -1,6 +1,9 @@
 const Perro = require('../models/Perro');
 
 exports.getNuevoPerro = (request, response, next) => {
+    if (!request.session.isLoggedIn) {
+        return response.redirect('/users/login');
+    }
     response.render('nuevoPerro', {
         titulo: 'Nuevo perro',
         isLoggedIn: request.session.isLoggedIn === true ? true : false
@@ -8,6 +11,7 @@ exports.getNuevoPerro = (request, response, next) => {
 };
 
 exports.postNuevoPerro = (request, response, next) => {
+
     const nuevoPerro = new Perro(request.body.nombre_perro, request.body.imagen_perro);
     nuevoPerro.save()
         .then(() => {
