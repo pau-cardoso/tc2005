@@ -8,12 +8,12 @@ const multer = require('multer');
 const csrf = require('csurf');
 const csrfProtection = csrf();
 
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+
 const rutasPerros = require('./routes/perros');
 const rutasGuarderia = require('./routes/guarderia');
 const rutasUsers = require('./routes/users');
-
-app.set('view engine', 'ejs');
-app.set('views', 'views');
 
 //Para accerder fácilmente a los datos de las formas
 app.use(bodyParser.urlencoded({extended: false}));
@@ -22,12 +22,12 @@ app.use(bodyParser.urlencoded({extended: false}));
 const fileStorage = multer.diskStorage({
     destination: (request, file, callback) => {
         //'uploads': Es el directorio del servidor donde se subirán los archivos 
-        callback(null, 'public/uploads');
+        callback(null, 'uploads');
     },
     filename: () => (request, file, callback) => {
         //aquí configuramos el nombre que queremos que tenga el archivo en el servidor, 
         //para que no haya problema si se suben 2 archivos con el mismo nombre concatenamos el timestamp
-        callback(null, new Date().toISOString() + '-' + file.originalname);
+        callback(null, new Date().toISOString().replace(/:/g, '-') + '-' + file.originalname);
     },
 });
 
@@ -35,7 +35,15 @@ const fileStorage = multer.diskStorage({
 //usamos single porque es un sólo archivo el que vamos a subir, 
 //pero hay diferentes opciones si se quieren subir varios archivos. 
 //'archivo' es el nombre del input tipo file de la forma
-app.use(multer({ storage: fileStorage }).single('imagen-perro'));
+app.use( multer(
+        { storage: fileStorage }
+    ).single('imagen_perro'));
+
+// Para acceder a los recursos de la carpeta public
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Para acceder a los recursos de la carpeta uploads
+app.use(express.static(path.join(__dirname, 'uploads')));
 
 //Para acceder a los valores de las cookies
 app.use(cookieParser());
@@ -47,8 +55,6 @@ app.use(session({
     saveUninitialized: false, //Asegura que no se guarde una sesión para una petición que no lo necesita
 }));
 
-// Para acceder a los recursos de la carpeta public
-app.use(express.static(path.join(__dirname, 'public')));
 app.use(csrfProtection); 
 
 app.use('/perros', rutasPerros);

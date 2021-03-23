@@ -9,8 +9,13 @@ exports.getNuevoPerro = (request, response, next) => {
 };
 
 exports.postNuevoPerro = (request, response, next) => {
+    const image = request.file;
+    if (!image) {
+        console.error('Error al subir la imagen');
+        return response.status(422).redirect('/');
+    }
 
-    const nuevoPerro = new Perro(request.body.nombre_perro, request.body.imagen_perro);
+    const nuevoPerro = new Perro(request.body.nombre_perro, image.filename);
     nuevoPerro.save()
         .then(() => {
 			response.setHeader( 'Set-Cookie', ['ultimo_perro =' + nuevoPerro.nombre + '; HttpOnly'] );

@@ -2,7 +2,7 @@
 <%- include('includes/head.ejs') %>
 
 <h1>Añadir perro</h1>
-<form action="nuevo-perro" method="POST" enctype="multipart/form-data">
+<form action="nuevo-perro?_csrf=<%=csrfToken%>" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
     <br>
     <div class="input-group mb-3">
@@ -17,8 +17,8 @@
           <span class="input-group-text">Imagen</span>
         </div>
         <div class="custom-file">
-          <input type="file" class="custom-file-input" name="imagen_perro" id="inputImagenPerro">
-          <label class="custom-file-label" for="inputImagenPerro">Choose file</label>
+          <input type="file" class="custom-file-input" name="imagen_perro" id="imagen_perro">
+          <label class="custom-file-label" for="imagen_perro">Choose file</label>
         </div>
     </div>
     <br>
@@ -26,3 +26,10 @@
 </form>
 
 <%- include('includes/footer.ejs') %>
+<script>
+  // Add the following code if you want the name of the file appear on select
+  $(".custom-file-input").on("change", function() {
+    var fileName = $(this).val().split("\\").pop();
+    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+  });
+</script>
