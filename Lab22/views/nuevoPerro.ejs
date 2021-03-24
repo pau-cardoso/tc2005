@@ -4,32 +4,12 @@
 <h1>Añadir perro</h1>
 <form action="nuevo-perro?_csrf=<%=csrfToken%>" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
+    <label for="nombre_perro">Nombre</label>
+    <input type="text" name="nombre_perro">
+    <label for="imagen_perro">Imagen</label>
+    <input type="file" name="imagen_perro">
     <br>
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="nombre_perro">Nombre</span>
-        </div>
-        <input type="text" name="nombre_perro" class="form-control" placeholder="Nombre" aria-label="nombre" aria-describedby="nombre_perro">
-    </div>
-
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text">Imagen</span>
-        </div>
-        <div class="custom-file">
-          <input type="file" class="custom-file-input" name="imagen_perro" id="imagen_perro">
-          <label class="custom-file-label" for="imagen_perro">Choose file</label>
-        </div>
-    </div>
-    <br>
-    <input class="btn" type="submit" value="Registrar perro en guarderia">
+    <input type="submit" value="Registrar perro en guarderia">
 </form>
 
 <%- include('includes/footer.ejs') %>
-<script>
-  // Add the following code if you want the name of the file appear on select
-  $(".custom-file-input").on("change", function() {
-    var fileName = $(this).val().split("\\").pop();
-    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-  });
-</script>
